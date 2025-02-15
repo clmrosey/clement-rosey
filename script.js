@@ -7,15 +7,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Changement dynamique de la barre de navigation lors du scroll
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 50) {
+  /*// Changement dynamique de la barre de navigation lors du scroll
+  //const navbar = document.getElementById('navbar');
+  //window.addEventListener('scroll', function() {
+   // if (window.scrollY > 50) {
       navbar.style.background = 'var(--nav-bg)';
       navbar.style.padding = '10px 0';
     } else {
       navbar.style.background = 'transparent';
       navbar.style.padding = '20px 0';
+    }
+  });*/
+
+  window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 0) {
+      navbar.classList.add('fixed-nav');
+    } else {
+      navbar.classList.remove('fixed-nÒav');
     }
   });
   
